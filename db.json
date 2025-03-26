@@ -1,0 +1,31 @@
+{
+    "chapters": [
+      { "id": "x9y8z7", "name": "Argentina" },
+      { "id": "a1b2c3", "name": "Backsteinboys" },
+      { "id": "n3e6q3", "name": "Chöngudinge" },
+      { "id": "rfwe1", "name": "Emsland" },
+      { "id": "fr314", "name": "Hinterland"}
+    ],
+    "users": [
+      {
+        "user_id": "JknyCs9pcTTEK7VeEe1pbqZ6cX43",
+        "username": "PAK",
+        "email": "user1@example.com",
+        "privilege_level": "Administrator"
+      }
+    ],
+    "usersChapters": [
+      {
+        "user_id": "JknyCs9pcTTEK7VeEe1pbqZ6cX43",
+        "chapter_id": "x9y8z7",
+        "warriorName": "1337H4X0R",
+        "chapter_rank": "President"
+      },
+      {
+        "user_id": "JknyCs9pcTTEK7VeEe1pbqZ6cX43",
+        "chapter_id": "a1b2c3",
+        "warriorName": "SailorDude1337",
+        "chapter_rank": "Drunkass"
+      }
+    ]
+  }
