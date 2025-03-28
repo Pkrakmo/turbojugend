@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import type { RouteLocationNormalized, NavigationGuardNext } from "vue-router";
+import type { NavigationGuardNext } from "vue-router";
 import HomeView from "@/views/HomeView.vue"; 
 import ChapterView from "@/views/ChapterView.vue"; 
 import ChapterDetailView from "@/views/ChapterDetailView.vue";
@@ -17,7 +17,7 @@ const routes = [
   { 
     path: "/profile", 
     component: ProfileView,
-    beforeEnter: (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    beforeEnter: (_: unknown, __: unknown, next: NavigationGuardNext) => {
       if (!isAuthenticated()) {
         next("/login"); 
       } else {
