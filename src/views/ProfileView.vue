@@ -46,8 +46,15 @@ onMounted(() => {
 
 // Logout function
 const logout = async () => {
+  // Clear localStorage for the current URL
+  localStorage.removeItem("userToken");
+  localStorage.removeItem("userName");
+
+  // Sign out the user
   await signOut(auth);
-  router.push('/login'); // Redirect to login
+
+  // Redirect to login
+  router.push('/login');
 };
 </script>
 

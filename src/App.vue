@@ -36,6 +36,13 @@ const menuOpen = ref(false); // For responsive toggle
         >
           My Profile
         </router-link>
+        <router-link
+          to="/application"
+          class="block py-2 px-4 rounded-lg hover:bg-gray-700"
+          :class="{ 'bg-gray-700': route.path === '/application' }"
+        >
+          Application
+        </router-link>
       </nav>
     </aside>
 

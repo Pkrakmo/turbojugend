@@ -19,13 +19,22 @@
         "user_id": "JknyCs9pcTTEK7VeEe1pbqZ6cX43",
         "chapter_id": "x9y8z7",
         "warriorName": "1337H4X0R",
-        "chapter_rank": "President"
+        "chapter_rank": "President",
+        "chapter_status": "Active"
       },
       {
         "user_id": "JknyCs9pcTTEK7VeEe1pbqZ6cX43",
         "chapter_id": "a1b2c3",
         "warriorName": "SailorDude1337",
-        "chapter_rank": "Drunkass"
+        "chapter_rank": "Drunkass",
+        "chapter_status": "Active"
+      },
+      {
+        "user_id": "123456789",
+        "chapter_id": "x9y8z7",
+        "warriorName": "RowarKald",
+        "chapter_rank": "Pissbuckets",
+        "chapter_status": "Pending"
       }
     ]
   }

@@ -1,28 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "@/views/HomeView.vue"; // Updated to match the new naming convention
-import ChapterView from "@/views/ChapterView.vue"; // Ensure this is the correct filename
+import type { NavigationGuardNext } from "vue-router";
+import HomeView from "@/views/HomeView.vue"; 
+import ChapterView from "@/views/ChapterView.vue"; 
 import ChapterDetailView from "@/views/ChapterDetailView.vue";
-import ProfileView from "@/views/ProfileView.vue"; // Updated to match the new naming convention
+import ProfileView from "@/views/ProfileView.vue"; 
 import { auth } from "@/firebase";
+import ApplicationView from "@/views/ApplicationView.vue";
 
-const isAuthenticated = () => !!auth.currentUser || localStorage.getItem("userToken");
+const isAuthenticated = (): boolean => !!auth.currentUser || localStorage.getItem("userToken") !== null;
 
 const routes = [
   { path: "/", component: HomeView },
-  { path: "/chapters", component: ChapterView }, // Route for the chapters list
-  { path: "/chapters/:id", component: ChapterDetailView }, // Route for individual chapter details
+  { path: "/application", component: ApplicationView },
+  { path: "/chapters", component: ChapterView }, 
+  { path: "/chapters/:id", component: ChapterDetailView },
   { 
     path: "/profile", 
     component: ProfileView,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (_: unknown, __: unknown, next: NavigationGuardNext) => {
       if (!isAuthenticated()) {
-        next("/login"); // Redirect if not logged in
+        next("/login"); 
       } else {
-        next(); // Allow access
+        next(); 
       }
     }
   },
-  { path: "/login", component: () => import("@/views/LoginView.vue") } // Lazy-loaded login view
+  { path: "/login", component: () => import("@/views/LoginView.vue") }
 ];
 
 const router = createRouter({
@@ -31,6 +34,3 @@ const router = createRouter({
 });
 
 export default router;
-
-
-
